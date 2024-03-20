@@ -113,7 +113,7 @@ jobs:
     - name: Check failure percentage
       run: |
         FAILURE_PERCENTAGE=${{ steps.pytest.outputs.failure_percentage }}
-        if [ $FAILURE_PERCENTAGE -ge 60 ]; then
+        if [ $FAILURE_PERCENTAGE -le 60 ]; then
           echo "Test failure percentage exceeds 60%. Aborting further steps."
           
           exit 1
